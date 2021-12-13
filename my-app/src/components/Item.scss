@@ -1,0 +1,48 @@
+
+
+// section{
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//    flex-direction: column;
+  
+figure{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}   
+   img{
+      width: 300px;
+      
+   }
+   figcaption{
+      font-size:2rem;
+   }
+   p{
+      font-weight: 600;
+   }
+// }
+.btn{
+   list-style: none;
+   font-size:1rem;
+   padding: 10px 15px;
+   background-color: #e5383b;
+}
+.Brand{
+   text-decoration: none;
+   font-size: 32px;
+   font-weight:700;
+   color: #660708;
+}
+.Link{
+   text-decoration: none;
+   color:#f5f3f4;
+   font-size: 1rem;
+   font-weight:600;
+   background-color:#a4161a;
+   padding: 8px 12px;
+   border-radius: 2rem;
+
+
+}
