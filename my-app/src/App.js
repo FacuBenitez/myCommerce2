@@ -49,18 +49,18 @@ function App() {
        <Route path={'/category/:categoryId'}>
         <ItemListContainer/>
        </Route>   
-        <Route path={'/'}>
+        <Route exact path={'/'}>
           <ItemListContainer/>  
         </Route>
 
         
 
-       <Route path={'/item/:idItem'}>
+        <Route path={'/item/:paramId'}>
           <ItemDetailContainer/>
 
         </Route>
         
-        
+        <ItemDetailContainer/>
       
         
       </Switch>

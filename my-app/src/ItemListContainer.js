@@ -21,10 +21,13 @@ const ItemListContainer = () => {
 
     return (
         <div>
-            
-            <ItemList
-            items={products}
-            />
+           {!products ? <h1>Cargando...</h1>
+
+               : <ItemList
+                items={products}
+                />
+           } 
+          
 
             
         </div>

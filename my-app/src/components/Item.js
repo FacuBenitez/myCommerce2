@@ -12,7 +12,6 @@ const Item = ({item}) => {
                    <img src={item.img} alt="" />
                    
                    <figcaption>{item.name}</figcaption>
-                   <p>{item.price}</p>
                    <Link className="btn" to={`/item/${item.id}`}>Ver detalle</Link>
 
 
