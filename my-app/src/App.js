@@ -10,6 +10,8 @@ import ItemListContainer from './ItemListContainer';
 // import UseEffect from './components/UseEffect';
 // import Ajax from './components/Ajax';
 
+
+import ItemCartContainer from './components/ItemCartContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 
@@ -60,8 +62,12 @@ function App() {
 
         </Route>
         
-        <ItemDetailContainer/>
-      
+        
+
+        <Route path={'/cart'}>
+          <ItemCartContainer/>
+
+        </Route>
         
       </Switch>
       </BrowserRouter>

@@ -1,8 +1,17 @@
 import React from 'react'
 import './Item.scss'
+import ItemCount from './ItemCount'
+
+
 
 const ItemDetail = ({product}) => {
-    console.log(product)
+    
+    
+    const addToCart = (count) => {
+        console.log(`agregado al carrito ${count}`);
+
+    }
+
     return (
         <div>
            <figure>
@@ -13,8 +22,19 @@ const ItemDetail = ({product}) => {
                    <p className="price"> {product?.price}</p>
                    
 
-
+                
+                     
+                        <ItemCount
+                            stock={product?.stock}
+                            initial={1}
+                            onAdd={addToCart}
+                         />
+               
+                 
                </figure>
+               
+                   
+               
         </div>
     )
 }

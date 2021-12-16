@@ -1,8 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import './Item.scss'
 
 
-const ItemCount = ({stock, initial }) => {
+const ItemCount = ({stock, initial,onAdd }) => {
     
     const [count, setCount] = useState(0)
 
@@ -21,13 +23,21 @@ const ItemCount = ({stock, initial }) => {
         }
     } 
         
-
+  
+        
     return (
         <div>
             
-            <h1>{count}</h1>
+            <h5>{count}</h5>
             <button onClick={IncrementCount}>+ </button>
             <button onClick={DecrementCount}>-</button>
+            {count > 0 &&(
+                <Link to={'/cart'}>
+                    <button className="btn-add" onClick={()=> onAdd(count)}>Agregar al carrito</button>
+                </Link>
+            )}
+
+            <Link className="Link" to={'/'}>Regresar</Link>
         </div>
     )
 
