@@ -16,7 +16,9 @@ const ItemDetail = ({product}) => {
     const [qty, setQty] = useState(0);
 
     
-    const {addItem} = useContext(CartContext) 
+    const {addItem} = useContext(CartContext)
+    
+    
     
     
 

@@ -5,7 +5,10 @@ export const CartContext = createContext();
 const CartContextProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
-    console.log(cart)
+   
+    
+    // console.log(cart)
+    
     const getCantidad = () => {
         let subTotal = 0;
         cart.forEach(elemento=> {
@@ -18,28 +21,32 @@ const CartContextProvider = ({children}) => {
     const addItem = (producto, quantity) => {
 
         const flag = isInCart(producto);
-        console.log(flag);
+        // console.log(flag);
         if (flag) {
             let productoRepetido = cart.find (elemento => elemento.item === producto);
             productoRepetido.cantidad += quantity;
             let cartSinRepetido = cart.filter (elemento => elemento.item !== producto);
             setCart([...cartSinRepetido, productoRepetido]);
         } else {
-            setCart([...cart, {item: producto, cantidad: quantity}]);
+            setCart([...cart, {...producto, cantidad: quantity}]);
         }
+        
     }
+
 
     const isInCart = (item) => {
         // console.log(item);
         return cart.some(producto => producto.item === item );
     }
 
-    const removeItem = (item) => {
+    const removeItem = (itemId) => {
+       return setCart(cart.filter(element => element.id !== itemId));
 
+        
     }
 
     const cleanCart = () => {
-
+        return setCart([]);
     }
 
 
