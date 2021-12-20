@@ -32,9 +32,9 @@ const ItemCount = ({stock, initial,onAdd }) => {
             <button onClick={IncrementCount}>+ </button>
             <button onClick={DecrementCount}>-</button>
             {count > 0 &&(
-                <Link to={'/cart'}>
+                
                     <button className="btn-add" onClick={()=> onAdd(count)}>Agregar al carrito</button>
-                </Link>
+                
             )}
 
             <Link className="Link" to={'/'}>Regresar</Link>
