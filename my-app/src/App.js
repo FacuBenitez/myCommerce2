@@ -11,8 +11,9 @@ import ItemListContainer from './ItemListContainer';
 // import Ajax from './components/Ajax';
 
 
-import ItemCartContainer from './components/ItemCartContainer';
+import Cart from './components/Cart';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import CartContextProvider from './components/context/CartContext';
 
 
 
@@ -31,23 +32,12 @@ function App() {
     
     
     <div>
-      
+    <CartContextProvider>
+  
      <BrowserRouter>
       <Navbar/>
       <Switch>
 
-      {/* <ScrollHooks/> */}
-      {/* <RelojHooks/>
-      <UseEffect/> */}
-      {/* <Ajax/> */}
-      {/* <ApiFetch></ApiFetch> */}
-      {/* <CrudApp/> */}
-      {/* <ItemCount initial={1} */}
-      {/* stock={20} */}
-    
-      {/* > */}
-        
-      {/* </ItemCount> */}
        <Route path={'/category/:categoryId'}>
         <ItemListContainer/>
        </Route>   
@@ -65,12 +55,15 @@ function App() {
         
 
         <Route path={'/cart'}>
-          <ItemCartContainer/>
+          <Cart/>
 
         </Route>
         
       </Switch>
+      
       </BrowserRouter>
+    </CartContextProvider>
+
     </div>
   );
 }
