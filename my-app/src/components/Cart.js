@@ -46,7 +46,7 @@ const Cart = () => {
                     return <tr>
                         <td ><img src={producto.img} alt="" /> </td>
                         <td > {producto.description} </td>
-                        <td>{producto.price}</td>
+                        <td>{producto.cantidad * producto.price}</td>
                         <td > {producto.cantidad} 
                         
                         <Button onClick={()=>removeItem(producto.id)} color="error" variant="contained" size="small">Eliminar</Button>

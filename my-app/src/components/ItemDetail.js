@@ -45,7 +45,7 @@ const ItemDetail = ({product}) => {
                    
                    <figcaption>{product?.title}</figcaption>
                    <p className="detail">{product?.description}</p>
-                   <p className="price"> {product?.price}</p>
+                   <p className="price"> ${product?.price}</p>
                    
                     {added ?
                     <Link className="Link" to={'/cart'} onClick={handlePurchase}>
