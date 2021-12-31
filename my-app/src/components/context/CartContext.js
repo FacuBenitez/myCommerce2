@@ -6,6 +6,7 @@ const CartContextProvider = ({children}) => {
 
     const [cart, setCart] = useState([]);
         // const[cantidad, setCantidad] = useState(0)
+        const [userEmail, setUserEmail] = useState('')
    
     
 
@@ -56,11 +57,15 @@ const CartContextProvider = ({children}) => {
         return setCart([]);
     }
 
+    const getUser= (form) => {
+        setUserEmail(form)
+    }
 
     return(
         <CartContext.Provider value = {{
             cart,
             addItem, removeItem, cleanCart, getCantidad, isInCart,
+            getUser
         }}>
             {children}
         </CartContext.Provider>
