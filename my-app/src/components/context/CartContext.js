@@ -14,7 +14,7 @@ const CartContextProvider = ({children}) => {
     const getCantidad = () => {
         let subTotal =0;
         cart.forEach(elemento=> {
-            // console.log(elemento);
+            
             subTotal += elemento.cantidad
         })
         return subTotal;
@@ -24,7 +24,7 @@ const CartContextProvider = ({children}) => {
 
 
     const addItem = (producto, quantity) => {
-        // console.log(producto)
+      
         const flag = isInCart(producto.id);
         console.log(flag);
         if (flag) {
@@ -36,7 +36,7 @@ const CartContextProvider = ({children}) => {
         } else {
             setCart([...cart, {...producto, cantidad: quantity}]);
         }
-        // getCantidad()
+        
         
     }
    
@@ -65,7 +65,7 @@ const CartContextProvider = ({children}) => {
         <CartContext.Provider value = {{
             cart,
             addItem, removeItem, cleanCart, getCantidad, isInCart,
-            getUser
+            getUser,userEmail
         }}>
             {children}
         </CartContext.Provider>
