@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import {CartContext} from '../context/CartContext'
 import { db } from '../../service/firebase'
 import Button from '@mui/material/Button';
+import './DashBoard.scss'
 
 const Dashboard = () => {
     const [order, setOrder] = useState([]);
@@ -34,8 +35,6 @@ const Dashboard = () => {
 
 
 
-
-
     console.log(order)
 
 
@@ -44,10 +43,11 @@ const Dashboard = () => {
             <h1>Gracias por su compra aqui esta su orden</h1>
 
             <section>{order.map(order => {
-                return <ul>
-                            <li>{order.buyer.email}</li>
-                            <li>{order.id}</li>
-                        </ul>
+                return <>
+                            
+                            <h5>{order.buyer.email}</h5>
+                            <p>{order.id}</p>
+                        </>
                     
             })}</section>
 
