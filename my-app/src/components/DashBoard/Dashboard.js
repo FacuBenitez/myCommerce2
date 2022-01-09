@@ -14,13 +14,13 @@ import './DashBoard.scss'
 const Dashboard = () => {
     const [order, setOrder] = useState([]);
     const { userEmail } = useContext(CartContext);
-    const { email } = userEmail;
+   
 
     useEffect(() => {
 
         const ref = query(collection(db, 'orders'));
         getDocs(ref).then((snapshot) => {
-            const orden = snapshot.docs.map((doc) => {
+            const order = snapshot.docs.map((doc) => {
                 const data = doc.data();
             
                 return {
@@ -29,9 +29,9 @@ const Dashboard = () => {
                     
                 };
             });
-            setOrder(orden.filter((ticket) => ticket.buyer.email === email));
+            setOrder(order.filter((ticket) => ticket.buyer.email === userEmail.email));
         });
-    }, [email]);
+    }, [userEmail.email]);
 
 
 

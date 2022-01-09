@@ -19,7 +19,7 @@ const Cart = () => {
     
     
     const [form, setForm] = useState({ nombre: '', email: '' });
- 
+    const[loading, setLoading] = useState(true)
     
     const {cart,removeItem, cleanCart, getCantidad,getUser} = useContext(CartContext);
     let navigate = useNavigate();
@@ -36,6 +36,7 @@ const Cart = () => {
      const finalizarCompra = (e) => {
             e.preventDefault();
 
+            setLoading(false);
             getUser(form)
         
 
@@ -78,6 +79,7 @@ const Cart = () => {
                     setTimeout(() => {
                         cleanCart()
                         navigate('/dashboard');
+                        
                     }, 1000);
                 });
              
@@ -126,7 +128,7 @@ const Cart = () => {
                     </tbody>
                 </table>
                     
-                    <form action="POST"
+                  { loading ? <form action="POST"
                     onSubmit={finalizarCompra}
                     >
                         <input type="text" 
@@ -151,7 +153,8 @@ const Cart = () => {
                             Finalizar compra
                         </button>
                     </form>
-                
+                    : <h1>Estamos generando su orden</h1>
+                  }                        
             </>     
     
         )   

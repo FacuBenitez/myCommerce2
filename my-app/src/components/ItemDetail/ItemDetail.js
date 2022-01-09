@@ -1,11 +1,10 @@
 import React from 'react'
-// import './Item.scss'
 import ItemCount from '../ItemCount/ItemCount'
 import { useContext } from 'react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import {CartContext} from '../context/CartContext'
-
+import './ItemDetail.scss'
 
 
 
@@ -24,7 +23,7 @@ const ItemDetail = ({product}) => {
 
    
     const addToCart = (qty) => {
-        // console.log(`agregado al carrito ${qty},${product}`);
+    
         setAdded(true)
         
         setQty(qty)
@@ -39,7 +38,7 @@ const ItemDetail = ({product}) => {
     
     
     return (
-        <div>
+        <div className="Detail-container">
            <figure>
                    <img src={product?.img} alt="" />
                    

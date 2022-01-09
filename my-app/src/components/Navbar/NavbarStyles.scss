@@ -9,17 +9,19 @@ nav{
     align-items: center;
     background-color: #F7F7F7;
     height: 100px;
-
+    font-family: Poppins;
     p{
         font-weight: 700;
         font-size:16px;
         cursor: pointer;
     }
 
-    li{
-        list-style: none;
+    .Brand{
+        color: #161853;
         font-weight: 600;
-        cursor:pointer;
-        color: #142F43;
     }
+   .link{
+       text-decoration: none;
+   }
+   
 }
